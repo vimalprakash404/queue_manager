@@ -23,7 +23,7 @@ const redis = new Redis({
 });
 
 // Mongo client
-const mongoClient = new MongoClient(MONGOURI);
+const mongoClient = new MongoClient(MONGOURI ,{ useNewUrlParser: true, useUnifiedTopology: true });
 
 async function connectMongo() {
   await mongoClient.connect();
